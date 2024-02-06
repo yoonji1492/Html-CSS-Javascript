@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>05_이미지.html</title>
+    </head>
+    <body>
+        <!-- 참조 https://www.w3schools.com/html/html_images.asp -->
+        <!-- 
+            이미지 (.jpg .gif .png) 정적이미지
+                <img src="경로명+파일명">
+                <img src="경로명+파일명"/>
+
+                1) 상대경로
+                    현재 HTML 문서가 저장되어 있는 폴더를 기준으로 한다.
+                    (여기서는 /frontend/html 폴더)
+                    images/             현재 폴더안에서 하위폴더 images
+                    ./images/           현재 폴더안에서 하위폴더 images
+                    ../images/          현재 폴더의 상위폴더 images
+                    ../../images/       현재 폴더의 상위의 상위폴더 images
+
+                2) 절대경로
+                    http://www.itwill.co.kr/
+                    웹프로젝트의 ROOT(홈디렉토리)부터 시작
+         -->
+
+        <h1>이미지 삽입</h1>
+        <img src="images/k1.png">
+        <hr>
+        <img src="./images/k2.png">
+        <hr>
+        <img src="../images/k3.png">
+        <hr>
+        <img src="../../images/k4.png">
+        <hr>
+
+        <img src="../images/k3.png" width="150px" height="150px">
+        <hr>
+        <img src="../images/k3.png" width="50%" height="50%">
+        <hr>
+
+        <!-- 크기에 대한 기준은 가로(width) -->
+        <img src="../images/k5.png" width="150px">
+        <hr>
+
+        <!-- 테두리선 -->
+        <img src="../images/k6.png" border="2px">
+        <hr>
+        <img src="../images/k6.png" border="0">
+
+        <hr>
+        <img src="../images/k6.png" alt="뮤지" title="튜브">
+
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>02_inlineCSS.html </title>
+    </head>
+    <body>
+        <h1> 1) Inline CSS</h1>
+
+        <!-- style="속성:값; 속성:값; 속성:값;" -->
+
+        <div style="width:200px; height: 150px; background-color: red;"></div>
+        <div style="width:100px; /*가로크기*/
+                    height:100px; /*세로크기*/
+                    /*속성 한개 주석*/
+                    --background-color:blue;"></div>
+        <hr>
+        <div style="width:100%; height:100px; background-color:gold;"></div>
+        <hr>
+        <div style="width:50%; height:100px; background-color:green;"></div>
+        <hr>
+
+        <!-- 참조 https://www.w3schools.com/css/css_background.asp -->
+        <!-- background 배경 관련 스타일 -->
+        <div style="width:300px; 
+                    height:300px; 
+                    background-image: url(../images/angel.png); 
+                    background-repeat:no-repeat ; 
+                    background-position: right bottom;
+                    background-size:20% 20%;/*가로 세로*/"></div>
+        <hr>
+        <div style="width:300px; 
+                    height:300px; 
+                    background-color:gold; 
+                    --color:brown;                  /*글자색*/ 
+                    text-decoration: underline;       /*밑줄*/
+                    text-indent: 50px;                /*들여쓰기*/
+                    --text-shadow: 3px 2px blue;    /*그림자 수평(3) 수직(2) 파랑*/
+                    letter-spacing:-3px;              /*글자간격*/
+                    line-height:20px;                 /*줄간격*/
+                    word-spacing: 10px;               /*단어간격*/">       
+            시작부터 난관이었다. 산행을 앞두고 달리기를 하다 무릎을 다쳤다.<br> 
+            진단명은 '거위발건염'이었다. 의사는 내게 처방전을 건네주며 푹 쉬라고 했다. <br>
+            한숨이 나왔다. 산행을 미룰까 고민도 됐다. '이 상태로 갈 수 있을까?', '갔다가 괜히 조난당하는 건 아닐까?'. <br>
+            그렇다고 별다른 방법이 떠오르진 않았다. 일단 며칠 약을 먹었다. 통증이 조금 사라졌다. <br>
+            '이 정도면 산에 가도 되지 않을까?' 마음 한켠에 의문을 묻어두고, 일단 계획대로 취재를 준비했다.
+        </div>
+        <hr>
+
+        <textarea cols="30" rows="10" 
+                  style="background-image: url(../images/angel.png);
+                         background-repeat: no-repeat;
+                         background-position:right bottom;
+                         background-size:30% 50%;"></textarea>
+    </body>
+</html>

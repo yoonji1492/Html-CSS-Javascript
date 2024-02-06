@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>14_회원가입.html</title>
+    </head>
+    <body>
+        
+        <!-- 참조 https://www.midasb.co.kr/shop/idinfo.html#none -->
+
+        <h1>회/원/가/입</h1>
+
+        <!-- 식별자 : 구분하기 위한 이름 -->
+        <!-- id="javaScript나 jQuery 접근시 주로 사용" -->
+        <!-- name="Backend에서 접근시 주로 사용" -->
+        <form id="memfrm" name="memfrm">
+            이름 :
+            <input type="text" name="uname" id="uname" autofocus> <!-- 커서가 미리 들어가 있음 -->
+            <hr>
+
+            아이디:
+            <input type="text" 
+                   name="userid" 
+                   id="userid" 
+                   size="10" 
+                   maxlength="5" 
+                   placeholder="보충설명" 
+                   required> <!--required 데이터 반드시 입력해야 한다-->
+
+            <input type="button" value="아이디중복확인">
+            <hr>
+
+            비밀번호 :
+            <input type="password" 
+                   name="userpw" 
+                   id="userpw" 
+                   size="12" 
+                   maxlength="12" 
+                   placeholder="비밀번호 입력해 주세요" 
+                   required>
+            <hr>
+
+            우편번호 : 
+            <input type="text" size="5" readonly><!-- 커서가 못 들어감 -->
+            <input type="button" value="주소찾기">
+            <br>
+            나머지 주소 : <input type="text">
+            <hr>
+
+            나이 : <!-- type=radio의 name을 동일하게 주면 그룹이 생서되고, 한개만 선택할 수 있다 -->
+            <input type="radio" name="age" value="10">10대
+            <input type="radio" name="age" value="20">20대
+            <input type="radio" name="age" value="30">30대
+            <hr>
+            
+            성별 : 
+            <input type="radio" name="gender" value="m">남
+            <input type="radio" name="gender" value="f" checked>여
+            <hr>
+
+            취미 : 
+            <input type="checkbox" name="movie" id="movie" value="m">영화
+            <input type="checkbox" name="cook" id="cook" value="c" checked>요리
+            <input type="checkbox" name="game" id="game" value="g">게임
+        </form>
+        <hr>
+
+        <!-- 2. 여는태그와 닫는태그가 있는 폼 컨트롤 요소 -->
+        <form id="myform" name="myform">
+            <button>버튼1</button>
+            <hr>
+
+            생년월일 : 
+            <select name="myYear" id="myYear">
+                <option value="2022">2022년</option>
+                <option value="2023" selected>2023년</option>
+                <option value="2024">2024년</option>
+            </select>
+
+            <!-- multiple : ctrl이용해서 다중 선택 가능 -->
+            <select name="myMonth" id="myMonth" multiple>
+                <option value="JAN">1월</option>
+                <option value="FEB">2월</option>
+                <option value="MAR">3월</option>
+                <option value="APR">4월</option>
+                <option value="MMAY">5월</option>
+            </select>
+            <hr>
+            
+            배송메세지 : 
+            <textarea name="msg" id="msg" cols="30" rows="10" maxlength="200">200글자 이내로 입력해 주세요.</textarea>
+            <hr>
+            
+            <input type="submit" value="전송"><!-- <form name=myform>이 서버로 전송됨 -->
+            <input type="reset" value="취소">
+        </form>
+    </body>
+</html>

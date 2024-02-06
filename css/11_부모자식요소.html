@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>11_부모자식요소.html</title>
+        <style>
+            body{
+                background-color: aqua;
+                margin:0;
+                /* <body>요소는 position:relative 속성이 이미 있는 상태 */
+                --position:relative;
+            }
+            .parent{
+                width:600px;
+                height:300px;
+                background-color: coral;
+                margin:150px;
+                position:relative;
+            }
+            .child{
+                width:100px;
+                height:50px;
+                background-color: gray;
+                position:absolute;
+                right:10px;
+                bottom:10px;
+            }
+        </style>
+    </head>
+    <body> <!-- style="position:relative" 속성이 이미 있는 상태임-->
+        
+        부모요소 : relative / 자식요소 : absolute
+
+        <div class="parent">
+            <div class="child"></div>
+        </div>
+
+    </body>
+</html>
+
