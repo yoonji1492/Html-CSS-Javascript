@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>02_지폐갯수.html</title>
+        <meta charset="UTF-8">
+        <style></style>
+    </head>
+    <body>
+
+        <h3>지폐갯수 구하기</h3>
+
+        <div id="demo"></div>
+        
+        <script>
+            // 연습) 각 지폐갯수를 구해서 표작성해서 본문 id=demo에 출력하시오
+            /*
+                ┌────────────┐
+                │ 만원 │ 5장 │
+                ├────────────┤
+                | 천원 | 4장 |
+                ├────────────┤
+                | 백원 | 3장 |
+                ├────────────┤
+                | 십원 | 2장 |
+                └────────────┘
+            */
+
+            let money = 54320;
+
+            document.write(money);
+            document.write('<hr>');
+            document.write(money/10000);//5.432
+            document.write('<hr>');
+            document.write(money%10000);//4320
+            document.write('<hr>');
+            
+
+            let m = parseInt(money/10000)   //5
+            money = money%10000;            //4320  money%=10000
+
+            let c = parseInt(money/1000)    //4
+            money = money%1000;             //320
+
+            let d = parseInt(money/100)     //3
+            money = money%100;              //20
+
+            let s = parseInt(money/10)      //2 
+
+            // let num1 = parseInt(money / 10000);
+            // let num2 = parseInt((money % 10000)/1000);
+            // let num3 = parseInt((money % 1000)/100);
+            // let num4 = parseInt((money % 100)/10);
+            
+            let result  = ''; // 결과값
+            result += '<table border="1">';
+            result += '<tr>';
+            result +=       '<th>만원</th>';
+            result +=       '<th>'+  m + '장</th>';
+            result += '</tr>';
+            result += '<tr>';
+            result +=       '<th>천원</th>';
+            result +=       '<th>'+  c + '장</th>';
+            result += '</tr>';
+            result += '<tr>';
+            result +=       '<th>백원</th>';
+            result +=       '<th>'+  d + '장</th>';
+            result += '</tr>';
+            result += '<tr>';
+            result +=       '<th>십원</th>';
+            result +=       '<th>'+  s + '장</th>';
+            result += '</tr>';
+            result += '</table>';
+
+            // result = result + '<table border="1">';
+            // result = result + '<tr>';
+            // result = result +       '<th>만원</th>';
+            // result = result +       '<th>'+  m + '장</th>';
+            // result = result + '</tr>';
+            // result = result + '<tr>';
+            // result = result +       '<th>천원</th>';
+            // result = result +       '<th>'+  c + '장</th>';
+            // result = result + '</tr>';
+            // result = result + '<tr>';
+            // result = result +       '<th>백원</th>';
+            // result = result +       '<th>'+ d + '장</th>';
+            // result = result + '</tr>';
+            // result = result + '<tr>';
+            // result = result +       '<th>십원</th>';
+            // result = result +       '<th>'+ s + '장</th>';
+            // result = result + '</tr>';
+            // result = result + '</table>';
+            
+            // 본문 id=demo에 출력
+            document.getElementById('demo').innerHTML = result;
+        </script>
+    </body>
+</html>
+

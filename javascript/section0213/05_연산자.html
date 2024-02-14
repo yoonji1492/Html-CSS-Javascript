@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>05_연산자.html</title>
+        <meta charset="UTF-8">
+        <style></style>
+    </head>
+    <body>
+
+        <h3>연산자</h3>
+
+        <script>
+
+            // 1. () 최우선 연산자
+            document.write(3+4+5/2);    // 9.5
+            document.write((3+4+5)/2);  // 6
+            document.write('<hr>');  
+
+
+            // 2. 대입 연산자
+            let num = 3; // 초기값
+
+            num = num + 2;  // 3+2
+            document.write(num +'<hr>'); 
+
+            num += 2;       // 5+2
+            document.write(num +'<hr>'); 
+
+            num = num-3;    // 7-3
+            document.write(num +'<hr>'); 
+
+            num -= 3;       // 4-3
+            document.write(num +'<hr>'); 
+
+            num *= 10;      // 1*10
+            document.write(num +'<hr>'); 
+
+            num /= 2;       // 10/2
+            document.write(num +'<hr>'); 
+
+            num %= 2;       // 5%2 = 1
+            document.write(num +'<hr>'); 
+            /////////////////////////////////////////////////////////////////
+
+
+            // 3. 1증감연산자
+
+            let a = 3;
+
+            a = a + 1; // 3+1 = 4
+            document.write(a +'<hr>');//4
+            a += 1; // 4+1
+            document.write(a +'<hr>');//5
+            a++; // 5+1
+            document.write(a +'<hr>');//6
+            ++a; // 6+1
+            document.write(a +'<hr>');//7
+
+            
+            let b = 3;
+
+            b = b -1; // 3-1
+            document.write(b+'<hr>');
+            b -=1; // 2-1
+            document.write(b +'<hr>');
+            b--; //1-1
+            document.write(b +'<hr>');
+            --b; //0-1
+            document.write(b +'<hr>');
+
+
+            // 1증감연산자는 다른 계산식과 같이 사용할 경우 주의!
+            let c = 10;
+            let d = 20;
+
+            let i = c++;    // let i = c  i=10 (나중에)
+                            // c = c+1    c+10+1
+
+            let j = --d;    // d=d-1       d=20-1 (먼저)
+                            // let j = d   j=19
+
+            document.write(c+d+i+j);//11+19+10+19
+            document.write('<hr>');
+            ////////////////////////////////////////////////////////////////////
+
+
+            // 4. 삼항 연산자 조건은 맞다 틀리다로 존재
+            //    형식) (조건) ? 참 : 거짓
+            
+            let n = 3;
+            document.write(n*-1); // 이항연산자 3*-1
+            document.write(-n);   // 단항연산자 3*-1
+            document.write('<hr>');
+
+            // 문1) 양수값을 구하시오 (절대값)
+            let su = -5;
+            let abs = (su < 0) ? su *-1 : su;
+                    // -5 < 0  ?-5*-1 (-su)
+            document.write(su +'절대값: ' + abs);
+            document.write('<hr>');
+
+                // let result1 = su < 0 ? 5 : -5;
+                // document.write(result1);
+                // document.write('<hr>');
+
+            // 문2) 세개의 수 중에서 가장 큰 값(최대값)을 구하시오
+            let x = 7, y = 5, z = 9;
+            
+            let max = (x<y) ? y : x;
+                    // 7<5  ?     7
+            max = (max<z) ? z : max;
+                // 7<9    ? 9
+            document.write(x+','+y+','+z+'중 최대값 : '+ max);
+
+                // let result2 = (x>y?x:y)>z ? (x>y?x:y):z
+                // document.write(result2);
+      
+        </script>
+    </body>
+</html>
+
