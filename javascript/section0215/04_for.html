@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>04_for.html</title>
+        <meta charset="UTF-8">
+        <style></style>
+    </head>
+    <body>
+
+        <h3>for 반복문</h3>
+
+        <script>
+            /*
+                ● for반목문형식
+                    - for(;;)   {}
+                    - for( in ) {}
+                    - 무한 LOOP 
+            */
+
+            // 증가에 따른 반복
+            for(let a=1; a<=3 ; a=a+1){ //a+1 a++ ++a
+                document.write('HTML'+ a);
+            }//for end
+            /*
+                a=1 1<=3 HTML a=1+1
+                    2<=3 HTML a=2+1
+                    3<=3 HTML a=3+1
+                    4<=3
+            */
+
+
+            // 감소에 따른 반복
+            for(let b=3; b>=1 ; b=b-1){ //b-=1 b-- --b
+                document.write('CSS'+ b);
+            }//for end
+            /*
+                b=3 3>=1 CSS b=3-1
+                    2>=1 CSS b=2-1
+                    1>=1 CSS b=1-1
+                    0>=1
+            */
+
+            document.write('<hr>');
+
+            // 연습) 4단 출력하기
+            /*
+                4*1=4
+            */
+            let dan = 4;
+            for(let i=1; i<=9; i++){
+                document.write(dan + '*'+ i + '=' +(dan*i));
+                document.write('<hr>');
+            }//for end
+        </script>
+    </body>
+</html>
+
