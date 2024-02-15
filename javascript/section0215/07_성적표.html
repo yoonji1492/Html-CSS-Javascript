@@ -18,6 +18,96 @@
             let total = kor+eng+mat         // 총점구하기
             let aver = parseInt(total/3);   // 평균구하기
 
+            /*
+                ● 출력결과 (표작성해서 본문 id=demo에 출력)
+                    -----------------------------
+                    이름    손흥민
+                    -----------------------------
+                    국어    100
+                    -----------------------------
+                    영어    100
+                    -----------------------------
+                    수학    95
+                    -----------------------------
+                    총점    235
+                    -----------------------------
+                    평균    98
+                    -----------------------------
+                            A학점                   문1) 평균 90이상 A, 80이상 B, 70이상 C, 60이상 D, 나머지는 F ~~
+                    결과    합격                    문2) 평균을 기준으로 과락(합격, 재시험, 탈락)
+                            *********              문3) 평균 10점당 * 한개씩
+                            장학생                  문4) 평균 95이상 장학생
+                    ----------------------------
+            */
+
+            // 문1) 평균 90이상 A, 80이상 B, 70이상 C, 60이상 D, 나머지는 F ~~
+            if(aver>=90){
+                document.write('A')
+            }else if(aver>=80){
+                document.write('B')
+            }else if(aver>=70){
+                document.write('C')
+            }else if(aver>=60){
+                document.write('D')
+            }else{
+                document.write('F')
+            }
+
+            //  문2) 평균을 기준으로 과락(합격, 재시험, 탈락)
+            // if(aver>=90){
+            //     document.write('합격')
+            // }else if(){
+
+            // }
+
+            //  문3) 평균 10점당 * 한개씩
+            let star = parseInt(aver/10);
+            for(let i=0; i<=10; i--){
+                document.write(" ".repeat(star) + "*")
+            }
+            
+
+
+            //  문4) 평균 95이상 장학생
+            if(aver>=95){
+                document.write('장학생');
+            }else{
+                document.write('장학생 아님');
+            }
+
+            let result  = ''; // 결과값
+            result += '<table border="1">';
+            result += '<tr>';
+            result +=       '<th>이름</th>';
+            result +=       '<th>'+  name + '</th>';
+            result += '</tr>';
+            result += '<tr>';
+            result +=       '<th>국어</th>';
+            result +=       '<th>'+  kor + '점</th>';
+            result += '</tr>';
+            result += '<tr>';
+            result +=       '<th>영어</th>';
+            result +=       '<th>'+  eng + '점</th>';
+            result += '</tr>';
+            result += '<tr>';
+            result +=       '<th>수학</th>';
+            result +=       '<th>'+  mat + '점</th>';
+            result += '</tr>';
+            result += '<tr>';
+            result +=       '<th>총점</th>';
+            result +=       '<th>'+  total + '점</th>';
+            result += '</tr>';
+            result += '<tr>';
+            result +=       '<th>평균</th>';
+            result +=       '<th>'+  aver + '점</th>';
+            result += '</tr>';
+            result += '<tr>';
+            result +=       '<th>결과</th>';
+            result +=       '<th>'+   + '점</th>';
+            result += '</tr>';
+            result += '</table>';
+
+            document.getElementById('demo').innerHTML = result;
         </script>
     </body>
 </html>
