@@ -41,69 +41,82 @@
             */
 
             // 문1) 평균 90이상 A, 80이상 B, 70이상 C, 60이상 D, 나머지는 F ~~
-            if(aver>=90){
-                document.write('A')
-            }else if(aver>=80){
-                document.write('B')
-            }else if(aver>=70){
-                document.write('C')
-            }else if(aver>=60){
-                document.write('D')
-            }else{
-                document.write('F')
+            let grade = '';
+            switch(parseInt(aver/10)){
+                case 10 :
+                case  9 : grade = 'A학점' ;break;
+                case  8 : grade = 'B학점' ;break;
+                case  7 : grade = 'C학점' ;break;
+                case  6 : grade = 'D학점' ;break;
+                default : grade = 'F학점' ;break;
             }
 
             //  문2) 평균을 기준으로 과락(합격, 재시험, 탈락)
-            // if(aver>=90){
-            //     document.write('합격')
-            // }else if(){
+            let pass = '';
+            if(aver>=70){
+                if(kor<40 || eng<40 || mat<40){
+                    pass = '재시험';
+                }else{
+                    pass = '합격'; 
+                }
+            }else{
+                pass = '탈락';
+            }//if end
 
-            // }
 
             //  문3) 평균 10점당 * 한개씩
-            let star = parseInt(aver/10);
-            for(let i=0; i<=10; i--){
-                document.write(" ".repeat(star) + "*")
-            }
-            
+            let star = '';
+            for(let n=1; n<=parseInt(aver/10); n=n+1){ //n+=1 n++ ++n
+                star = star + '*'; // star+='*'
+            }//for end
 
 
             //  문4) 평균 95이상 장학생
+            let special = '';
             if(aver>=95){
-                document.write('장학생');
-            }else{
-                document.write('장학생 아님');
-            }
+                special = '<span style="color:red; font-weight:bold">장학생</span>';
+            }//if end
 
+
+            // 출력
             let result  = ''; // 결과값
             result += '<table border="1">';
             result += '<tr>';
             result +=       '<th>이름</th>';
-            result +=       '<th>'+  name + '</th>';
+            result +=       '<td>'+  name + '</td>';
             result += '</tr>';
             result += '<tr>';
             result +=       '<th>국어</th>';
-            result +=       '<th>'+  kor + '점</th>';
+            result +=       '<td>'+  kor + '점</td>';
             result += '</tr>';
             result += '<tr>';
             result +=       '<th>영어</th>';
-            result +=       '<th>'+  eng + '점</th>';
+            result +=       '<td>'+  eng + '점</td>';
             result += '</tr>';
             result += '<tr>';
             result +=       '<th>수학</th>';
-            result +=       '<th>'+  mat + '점</th>';
+            result +=       '<td>'+  mat + '점</td>';
             result += '</tr>';
             result += '<tr>';
             result +=       '<th>총점</th>';
-            result +=       '<th>'+  total + '점</th>';
+            result +=       '<td>'+  total + '점</td>';
             result += '</tr>';
             result += '<tr>';
             result +=       '<th>평균</th>';
-            result +=       '<th>'+  aver + '점</th>';
+            result +=       '<td>'+  aver + '점</td>';
             result += '</tr>';
             result += '<tr>';
-            result +=       '<th>결과</th>';
-            result +=       '<th>'+   + '점</th>';
+            result +=       '<th rowspan="4">결과</th>';
+            result +=       '<td>'+ grade  + '</td>';
+            result += '</tr>';
+            result += '<tr>';
+            result +=       '<td>'+ pass  + '</td>';
+            result += '</tr>';
+            result += '<tr>';
+            result +=       '<td>'+ star  + '</td>';
+            result += '</tr>';
+            result += '<tr>';
+            result +=       '<td>'+ special  + '</td>';
             result += '</tr>';
             result += '</table>';
 
