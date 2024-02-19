@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>01_반복문연습.html</title>
+        <meta charset="UTF-8">
+        <style></style>
+    </head>
+    <body>
+
+        <h3>반복문 연습문제</h3>
+
+        <script>
+
+            // 문제1) 1~100 사이 중에서 짝수의 합, 홀수의 합을 각각 구하시오
+            //        짝수의 합 : 2550
+            //        홀수의 합 : 2500
+            let even = 0;   // 짝수의 합
+            let odd = 0;    // 홀수의 합
+
+            /* 1)
+            for(let a=1; a<=100; a=a+1){
+                if(a%2==0){
+                    even = even +a;
+                }else{
+                    odd = odd + a;
+                }//if end
+            }//for end
+            */
+
+            // 2)
+            let flag=false;
+            for(let a=1; a<=100; a=a+1){
+                if(flag){
+                    even = even+a;
+                    flag=false;
+                }else{  
+                    odd = odd+a;
+                    flag=true;
+                }//if end
+            }//for end
+            /*
+                a=1 1<=100
+                            if(false)
+                            else {flag=true}
+                    2<=100
+                            if(true) {flag=false}
+                    3<=100
+                            if(false)
+                            else {flag=true}
+                    4<=100
+                            if(true){flag=false}
+            */
+
+            document.write('짝수의 합 : ' + even );
+            document.write('<hr>');
+            document.write('홀수의 합 : ' + odd );
+            document.write('<hr>');
+            
+            // 문제2) 다음식의 결과를 구하시오
+            //        1-2+3-4+5    ... -100 = -50  
+            let hap = 0;
+            flag=false;
+
+            for(let a=1; a<=100; a=a+1){
+                if(flag){
+                    hap = hap - a;
+                    flag=false;
+                }else{
+                    hap = hap + a;
+                    flag=true;
+                }//if end
+            }//for end
+
+            document.write('1 - 2  + 3 - 4 + 5 ... -100= ' + hap );
+            document.write('<hr>');
+        </script>
+    </body>
+</html>
+
