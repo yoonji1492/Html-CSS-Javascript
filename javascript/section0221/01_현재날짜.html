@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>01_현재날짜.html</title>
+        <meta charset="UTF-8">
+        <style>
+            #clock{
+                width: 500px;
+                height: 40px;
+                color:blue;
+                font-weight:bold;
+                font-size:30px;
+                position:relative;
+                margin:0 auto;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h3>Date객체</h3>
+        현재날짜 <div id="clock"></div>
+
+        <script>
+            /*
+                문제) 날짜변수 d값을 이용해서 날짜 정보를아래와 같이 구성해서id=clock에 출력하시오
+                      출력결과) 2024.02.21 (수) AM 9:57:08
+                      글자갯수 2글자 : 월, 일, 분, 초
+                      오전 AM, 오후 PM (정오 12시 부터)
+            */
+
+            const d = new Date();
+
+            let today = ''; // 결과값
+
+            today += d.getFullYear() + '.' ; // 2024.
+
+            if(d.getMonth()+1<10){ 
+                today +='0';
+            }//if end
+            today += d.getMonth()+1 + '.';  // 2024.02
+
+            if(d.getDate()<10){ 
+                today +='0';
+            }//if end
+            today += d.getDate();          //d.getHours
+
+            switch(d.getDay()){
+                case 0 : today +=' (일)' ; break;
+                case 1 : today +=' (월)' ; break;
+                case 2 : today +=' (화)' ; break;
+                case 3 : today +=' (수)' ; break;
+                case 4 : today +=' (목)' ; break;
+                case 5 : today +=' (금)' ; break;
+                case 6 : today +=' (토)' ; break;
+            }//switch end
+
+            
+            if(d.getHours()<12){
+                today += ' AM ';            // 2024.02.21 (수) AM
+            }else{
+                today += ' PM ';
+            }//if end
+
+            if(d.getHours()<13){
+                today += d.getHours() + ':';     // 2024.02.21 (수) AM 11
+            }else{
+                today += d.getHours()-12 + ':'; 
+            }//if end
+            
+            if(d.getMinutes()<10){
+                today +='0';
+            }//if end
+            today += d.getMinutes() + ':';  // 2024.02.21 (수) AM 11 : 06 :
+
+            if(d.getSeconds()<10){
+                today +='0';
+            }//if end
+            today += d.getSeconds();  // 2024.02.21 (수) AM 11 : 06 : 35
+            document.getElementById('clock').innerText = today;
+        </script>
+    </body>
+</html>
+

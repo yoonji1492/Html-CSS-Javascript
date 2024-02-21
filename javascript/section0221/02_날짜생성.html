@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>02_날짜생성.html</title>
+        <meta charset="UTF-8">
+        <style></style>
+    </head>
+    <body>
+
+        <h3>Date객체 날짜 세팅</h3>
+
+        <script>
+
+            //참조 https://www.w3schools.com/js/js_date_methods_set.asp
+
+            const someday = new Date();
+
+            someday.setFullYear(1989, 5, 8); // 1989년 5월 8일
+
+            document.write(someday.getFullYear());  //1989
+            document.write('<br>');
+            document.write(someday.getMonth());     //5
+            document.write('<br>'); 
+            document.write(someday.getDate());      //8
+            document.write('<br>');
+
+            const days = ['일','월','화','수','목','금','토'];
+            document.write(days[someday.getDay()]); 
+            document.write('<hr>');
+            ////////////////////////////////////////////////////////////////////
+
+
+            // 날짜 데잍의 연산
+
+            const d = new Date();
+
+            // someday값(1989년5월8일)에서 10일 더하기 
+            d.setDate(someday.getDate()+10);                 // 1989년 5월 18일 
+            document.write(d.getDate());                     // 18
+            document.write('<hr>');
+
+            // someday값에서 3년 빼기
+            d.setFullYear(someday.getFullYear()-3);         // 1989년 5월 18일 
+            document.write(d.getFullYear());                // 1986
+            document.write('<hr>');
+
+            // someday값에서 10개월 더하기
+            d.setMonth(someday.getMonth()+10);              //1987.3.18
+            document.write(d.getFullYear());                //1987
+            document.write(d.getMonth());                   //3
+        </script>
+    </body>
+</html>
+
