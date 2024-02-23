@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>03_계산기.html</title>
+        <meta charset="UTF-8">
+        <style>
+            .txt{
+                border:2px solid blue;
+                text-align:right;
+                font-weight:bold;
+                font-size:30px;
+                color:black;
+                height:30px;
+                background:#f5f5f5;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h3>미니 계산기</h3>
+
+        <form>
+            <table border="1">
+                <tr>
+                    <td colspan="4">
+                        <input type="text" name="result" id="result" size="20" value="0" readonly class="txt">
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="  7  " onclick="inputData(7)"></td>
+                    <td><input type="button" value="  8  " onclick="inputData(8)"></td>
+                    <td><input type="button" value="  9  " onclick="inputData(9)"></td>
+                    <td><input type="button" value="  %  "></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="  4  " onclick="inputData(4)"></td>
+                    <td><input type="button" value="  5  " onclick="inputData(5)"></td>
+                    <td><input type="button" value="  6  " onclick="inputData(6)"></td>
+                    <td><input type="button" value="  *  "></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="  1  " onclick="inputData(1)"></td>
+                    <td><input type="button" value="  2  " onclick="inputData(2)"></td>
+                    <td><input type="button" value="  3  " onclick="inputData(3)"></td>
+                    <td><input type="button" value="  -  "></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="  0  " onclick="inputData(0)"></td>
+                    <td><input type="button" value="  .  "></td>
+                    <td><input type="button" value="  =  "></td>
+                    <td><input type="button" value="  +  "></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="  ←  " onclick="backspace()">
+                    </td>
+                    <td colspan="2">
+                        <input type="button" value="  C  " onclick="cls()">
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+
+        <script>
+
+            // c 버튼을 클릭하면 id=result에 0 을 대입
+            function cls(){
+                document.getElementById('result').value = 0;
+            }//cls() end
+
+            // 2) 클릭한 숫자 버튼에 맞는 숫자를 출력하기
+            function inputData(su){ // su 매개변수
+                // alert(su);
+                // 전달받은 su변수값을 id=result에 대입
+                // document.getElementById('result').value = document.getElementById('result').value + su;
+                // document.getElementById('result').value += su;
+
+                // id=result값을 숫자형으로 변환 '0789' -> 789
+                su = Number(document.getElementById('result').value + su);
+
+                document.getElementById('result').value = su;
+            }//inputData() end
+
+
+            // 3) ← 버튼을 클릭하면 id=result값에서 마지막 글자부터 순서대로 지우기
+            //    id=result값에서 마지막 글자만 제외시키고 다시 대입
+            //    단, 자릿수가 한개인 값은 0으로 ㄷ입
+            function backspace(){
+
+            }//backspace() end
+        </script>
+    </body>
+</html>
+
