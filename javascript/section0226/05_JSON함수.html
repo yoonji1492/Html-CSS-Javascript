@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>05_JSON함수.html</title>
+        <meta charset="UTF-8">
+        <style></style>
+    </head>
+    <body>
+
+        <h3>JSON 함수</h3>
+
+        <script>
+
+            // JSON Array
+            let myobj = {
+                name:'John',
+                age:30,
+                cars:['Ford', 'BMW', 'Fiat']
+            }
+
+            document.write(myobj.cars[0]);
+            document.write(myobj.cars[1]);
+            document.write(myobj.cars[2]);
+            document.write('<hr>');
+            //////////////////////////////////////////////////////////////
+
+            // JSON 관련 함수
+
+            // 1)JSON.parse()
+            // ->String형태의 JSON문법을 분리할 때
+            const person = '{"firstName":"John", "lastName":"Doe", "age":46}';
+            document.write(person.length);  //48
+            document.write(person);         //그냥 문자열
+            document.write('<hr>');
+
+            let obj = JSON.parse(person) //JSON형식으로 형변환
+            document.write(obj.firstName);  
+            document.write(obj.lastName);         
+            document.write(obj.age);   
+            document.write('<hr>');
+
+
+            // 2)JSON.stringify()
+            // ->JSON값을 일반 문자열 반환
+            let txt = {"firstName":"John", "lastName":"Doe", "age":46};
+            let str = JSON.stringify(txt);
+            document.write(str.length);  
+            document.write(str); 
+
+
+        </script>
+    </body>
+</html>
+
